@@ -75,6 +75,20 @@ const FunctCountComponent = () =>{
    )
  } 
 
+ // bouton qui se désactive avec les State
+ const ButtonDisabledComp = () => {
+   const [isActive,setActive] = useState(true);
+
+   return (
+     <Button 
+     onPress={ () =>{ setActive( !isActive ) } } 
+     title={ isActive 
+     ? "Vous n'avez pas cliqué !"
+     : "Merci ça va mieux !" } 
+     disabled={ !isActive } />
+   )
+ }
+
 
 export default function App() {
   return (
@@ -89,6 +103,8 @@ export default function App() {
       <FunctStateComponent />
 
       <FunctCountComponent />
+
+      <ButtonDisabledComp />
 
       <FunctionComponent />
 
