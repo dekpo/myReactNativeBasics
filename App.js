@@ -62,7 +62,18 @@ const FunctStateComponent = () =>{
       <Button onPress={ () => { setName("Moi") } } title="Change le State" />
       </View>
   )
-} 
+}
+
+// composant fonctionnel avec State
+const FunctCountComponent = () =>{
+  // déclaration de State avec Hook useState()
+  const [count,setCount] = useState(0);
+ 
+   return (
+       <Button onPress={ () => { setCount(count+1) } }
+       title={ 'VOUS AVEZ CLIQUÉ ' + count + ' FOIS' } />
+   )
+ } 
 
 
 export default function App() {
@@ -76,6 +87,8 @@ export default function App() {
       <StateComponent />
 
       <FunctStateComponent />
+
+      <FunctCountComponent />
 
       <FunctionComponent />
 
